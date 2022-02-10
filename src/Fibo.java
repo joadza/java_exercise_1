@@ -1,22 +1,21 @@
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 
-public class Fibo  {
+public class Fibo implements Command {
 
-    public String get_name() {
+    public String name() {
         return "fibo";
     }
 
-    public void run(Scanner sc) {
-        System.out.println("Index fibonacci n = ?");
+    public boolean run(Scanner sc) {
+        System.out.println("Index ?");
 
         int i = sc.nextInt();
         sc.nextLine();
         if (i == 0 || i == 1) {
             System.out.println(i);
             sc.close();
-            return;
+            return false;
         }
         int reste = 1, fibo = 1;
         for (int j = 2; j < i; j++) {
@@ -26,8 +25,7 @@ public class Fibo  {
         }
         System.out.println(fibo);
 
-        sc.close();
-        return;
+        return false;
     }
 
 }
