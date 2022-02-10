@@ -20,11 +20,11 @@ public class Launcher {
                 break;
             }
 
-            if(cmd == null) {
+            if(null == cmd) {
                 System.out.println("Unknown command");
             }
 
-        } while(cmd == null || !cmd.run(sc) );
+        } while(null == cmd || !cmd.run(sc) );
         sc.close();
     }
 }
